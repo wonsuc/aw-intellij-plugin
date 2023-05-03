@@ -8,7 +8,7 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.7.10"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.8.0"
+    id("org.jetbrains.intellij") version "1.13.3"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "1.3.1"
     // Gradle Qodana Plugin
@@ -42,8 +42,10 @@ intellij {
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
+    // NOTE: Current version. By default, project's version is used.
     version.set(properties("pluginVersion"))
-    groups.set(emptyList())
+    // NOTE: List of groups created with a new Unreleased section.
+    groups.set(listOf("Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"))
 }
 
 // Configure Gradle Qodana Plugin - read more: https://github.com/JetBrains/gradle-qodana-plugin
@@ -100,6 +102,9 @@ tasks {
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
+    // REF: https://plugins.jetbrains.com/author/me/tokens
+    // NOTE: Token Name: publish-token
+    //       Token Value: perm:d29uc3Vj.OTItNzk4NQ==.PBedt6ACapeobeGb6Y3Tty2YEUGV9i
     publishPlugin {
         dependsOn("patchChangelog")
         token.set(System.getenv("PUBLISH_TOKEN"))
