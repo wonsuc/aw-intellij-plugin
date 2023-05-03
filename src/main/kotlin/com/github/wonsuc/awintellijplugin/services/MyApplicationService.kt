@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.wonsuc.awintellijplugin.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.wonsuc.awintellijplugin.MyBundle
 
 class MyApplicationService {
 
