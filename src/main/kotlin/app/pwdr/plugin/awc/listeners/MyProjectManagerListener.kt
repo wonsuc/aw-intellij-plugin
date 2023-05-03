@@ -1,9 +1,9 @@
-package com.github.wonsuc.awintellijplugin.listeners
+package app.pwdr.plugin.awc.listeners
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
-import com.github.wonsuc.awintellijplugin.services.MyProjectService
+import app.pwdr.plugin.awc.services.MyProjectService
 
 internal class MyProjectManagerListener : ProjectManagerListener {
 

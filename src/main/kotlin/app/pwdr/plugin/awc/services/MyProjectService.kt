@@ -1,7 +1,7 @@
-package com.github.wonsuc.awintellijplugin.services
+package app.pwdr.plugin.awc.services
 
 import com.intellij.openapi.project.Project
-import com.github.wonsuc.awintellijplugin.MyBundle
+import app.pwdr.plugin.awc.MyBundle
 
 class MyProjectService(project: Project) {
 

@@ -1,4 +1,4 @@
-package com.github.wonsuc.awintellijplugin
+package app.pwdr.plugin.awc
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

@@ -1,4 +1,4 @@
-package com.github.wonsuc.awintellijplugin
+package app.pwdr.plugin.awc
 
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.psi.xml.XmlFile
