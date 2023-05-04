@@ -1,0 +1,266 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "name": "Alpine",
+  "version": "1.0.0",
+  "contributions": {
+    "html": {
+      "attributes": [
+        {
+          "virtual": true,
+          "name": "x-data"
+        },
+        {
+          "virtual": true,
+          "name": "x-init"
+        },
+        {
+          "virtual": true,
+          "name": "x-show"
+        },
+        {
+          "virtual": true,
+          "name": "x-on"
+        },
+        {
+          "virtual": true,
+          "name": "x-text"
+        },
+        {
+          "virtual": true,
+          "name": "x-html"
+        },
+        {
+          "virtual": true,
+          "name": "x-model"
+        },
+        {
+          "virtual": true,
+          "name": "x-for"
+        },
+        {
+          "virtual": true,
+          "name": "x-transition",
+          "attribute-value": {
+            "required": false
+          }
+        },
+        {
+          "virtual": true,
+          "name": "x-effect"
+        },
+        {
+          "virtual": true,
+          "name": "x-ignore",
+          "attribute-value": {
+            "required": false
+          }
+        },
+        {
+          "virtual": true,
+          "name": "x-ref"
+        },
+        {
+          "virtual": true,
+          "name": "x-cloak",
+          "attribute-value": {
+            "required": false
+          }
+        },
+        {
+          "virtual": true,
+          "name": "x-if"
+        },
+        {
+          "name": "Alpine x-bind attribute",
+          "virtual": true,
+          "pattern": {
+            "items": [
+              {
+                "path": "/html/attributes",
+                "includeVirtual": false
+              }
+            ],
+            "template": [
+              "x-bind:",
+              "#...",
+              "#item"
+            ]
+          }
+        },
+        {
+          "name": "Alpine x-bind shorthand",
+          "virtual": true,
+          "pattern": {
+            "items": [
+              {
+                "path": "/html/attributes",
+                "includeVirtual": false
+              }
+            ],
+            "template": [
+              ":",
+              "$...",
+              "#item"
+            ]
+          }
+        },
+        {
+          "name": "Alpine x-on attribute",
+          "virtual": true,
+          "pattern": {
+            "items": [
+              {
+                "path": "/html/events",
+                "includeVirtual": false
+              }
+            ],
+            "template": [
+              "x-on:",
+              "#...",
+              "#item",
+              {
+                "items": "modifiers",
+                "template": [
+                  ".",
+                  "#item:modifier"
+                ],
+                "required": false,
+                "repeat": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Alpine x-on shorthand",
+          "virtual": true,
+          "pattern": {
+            "items": [
+              {
+                "path": "/html/events",
+                "includeVirtual": false
+              }
+            ],
+            "template": [
+              "@",
+              "$...",
+              "#item",
+              {
+                "items": "modifiers",
+                "template": [
+                  ".",
+                  "#item:modifier"
+                ],
+                "required": false,
+                "repeat": true
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "name": "Mouse button event modifiers",
+          "extension": true,
+          "pattern": {
+            "or": [
+              "click",
+              "dblclick",
+              "mousedown",
+              "mouseup"
+            ]
+          },
+          "modifiers": [
+            {
+              "name": "left",
+              "description": "Only trigger handler for left button mouse events."
+            },
+            {
+              "name": "right",
+              "description": "Only trigger handler for right button mouse events."
+            },
+            {
+              "name": "middle",
+              "description": "Only trigger handler for middle button mouse events."
+            }
+          ]
+        },
+        {
+          "name": "Key event modifiers",
+          "extension": true,
+          "pattern": {
+            "or": [
+              "keydown",
+              "keypress",
+              "keyup"
+            ]
+          },
+          "modifiers": [
+            {
+              "name": "Key alias",
+              "pattern": {
+                "or": [
+                  "enter",
+                  "tab",
+                  "delete",
+                  "esc",
+                  "space",
+                  "up",
+                  "down",
+                  "left",
+                  "right"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "System event modifiers",
+          "extension": true,
+          "pattern": {
+            "or": [
+              "keydown",
+              "keypress",
+              "keyup",
+              "click",
+              "contextmenu",
+              "dblclick",
+              "mousedown",
+              "mouseenter",
+              "mouseleave",
+              "mousemove",
+              "mouseout",
+              "mouseover",
+              "mouseup",
+              "show",
+              "drag",
+              "dragend",
+              "dragenter",
+              "dragleave",
+              "dragover",
+              "dragstart",
+              "drop"
+            ]
+          },
+          "modifiers": [
+            {
+              "name": "System modifier key",
+              "description": "Triggers mouse or keyboard event listeners only when the modifier key is pressed.",
+              "pattern": {
+                "or": [
+                  "ctrl",
+                  "alt",
+                  "shift",
+                  "meta"
+                ]
+              }
+            },
+            {
+              "name": "exact",
+              "description": "Allows control of the exact combination of system modifiers needed to trigger an event."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
